@@ -1,12 +1,19 @@
 import { Badge } from "@mui/material";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { useContext } from "react";
+import { CartContext } from "../../../context/CartContext";
 
-const CartWidget = ({ items }) => {
+const CartWidget = () => {
+  const { totalItems } = useContext(CartContext);
+  const total = totalItems();
   return (
     <div>
-      {/* <span>{items}</span> //Primera version de prueba */}
-      <ShoppingCartOutlinedIcon color="info"></ShoppingCartOutlinedIcon>
-      <Badge badgeContent={0} color="warning"></Badge>
+      <ShoppingCartOutlinedIcon
+        alt="Cart"
+        src=""
+        fontSize="inherit"
+      ></ShoppingCartOutlinedIcon>
+      <Badge badgeContent={total} color="primary"></Badge>
     </div>
   );
 };

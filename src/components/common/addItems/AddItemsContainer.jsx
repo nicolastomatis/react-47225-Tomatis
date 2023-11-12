@@ -22,6 +22,7 @@ const AddItemsContainer = ({ item, onAdd }) => {
   return (
     <>
       <AddItem
+        stock={item.stock}
         addItems={() => addItems}
         removeItems={() => removeItems}
         contador={contador}

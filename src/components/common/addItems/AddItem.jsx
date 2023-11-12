@@ -2,8 +2,10 @@ import { Box, Button, IconButton, Typography } from "@mui/material";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import SendIcon from "@mui/icons-material/Send";
+import { useNavigate } from "react-router-dom";
 
-const AddItem = ({ addItems, removeItems, contador, onAdd }) => {
+const AddItem = ({ addItems, removeItems, contador, onAdd, stock }) => {
+  const goTo = useNavigate();
   return (
     <Box
       sx={{
@@ -50,12 +52,24 @@ const AddItem = ({ addItems, removeItems, contador, onAdd }) => {
           </IconButton>
         </Box>
       </Box>
+      <Box>
+        <Typography
+          component="div"
+          variant="subtitle1"
+          color={"grey"}
+          marginBottom={"3px"}
+        >
+          Stock Total: {stock}
+        </Typography>
+      </Box>
       <Box sx={{ display: "flex", alignItems: "center", pb: 1 }}>
         <Button
           variant="contained"
           endIcon={<SendIcon />}
+          disabled={stock <= 0}
           onClick={() => {
             onAdd(contador);
+            goTo("/cart");
           }}
         >
           Agregar al carrito

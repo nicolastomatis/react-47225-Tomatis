@@ -4,18 +4,18 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import SettingsIcon from "@mui/icons-material/Settings";
 import logo from "../../../assets/img/logo.png";
 import { Link } from "react-router-dom";
+import CartWidget from "../../common/cartWidget/CartWidget";
 
 const AppReturn = ({
   handleOpenNavMenu,
+  handleOpenUserMenu,
   handleCloseNavMenu,
   handleCloseUserMenu,
   anchorElNav,
@@ -31,25 +31,21 @@ const AppReturn = ({
       >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              /* href="#app-bar-with-responsive-menu" */
+            <Box
               sx={{
                 mr: 2,
                 display: { xs: "none", md: "flex" },
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
-                color: "white",
+                color: "inherit",
                 textDecoration: "none",
               }}
             >
               <Link to={"/"}>
-                <img src={logo} style={{ width: "200px" }} />
+                <img src={logo} style={{ width: "150px" }} />
               </Link>
-            </Typography>
+            </Box>
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
@@ -58,10 +54,7 @@ const AppReturn = ({
                 aria-controls="menu-appBar"
                 aria-haspopup="true"
                 onClick={handleOpenNavMenu}
-                /* color="inherit" */
-              >
-                <MenuIcon />
-              </IconButton>
+              ></IconButton>
               <Menu
                 id="menu-appBar"
                 anchorEl={anchorElNav}
@@ -88,10 +81,7 @@ const AppReturn = ({
               </Menu>
             </Box>
 
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
+            <Box
               sx={{
                 mr: 2,
                 display: { xs: "flex", md: "none" },
@@ -99,14 +89,14 @@ const AppReturn = ({
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
-                color: "white",
+                color: "inherit",
                 textDecoration: "none",
               }}
             >
               <Link to={"/"}>
                 <img src={logo} style={{ width: "150px" }} />
               </Link>
-            </Typography>
+            </Box>
 
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
@@ -128,15 +118,19 @@ const AppReturn = ({
                     size="large"
                     sx={{ p: 0, mr: 1 }}
                   >
-                    <ShoppingCartOutlinedIcon
-                      alt="Cart"
-                      src=""
-                      fontSize="inherit"
-                    />
+                    <CartWidget />
                   </IconButton>
                 </Tooltip>
               </Link>
-              
+              <Tooltip title="Open settings">
+                <IconButton
+                  onClick={handleOpenUserMenu}
+                  size="large"
+                  sx={{ p: 0 }}
+                >
+                  <SettingsIcon />
+                </IconButton>
+              </Tooltip>
               <Menu
                 sx={{ mt: "45px" }}
                 id="menu-appBar"
@@ -154,12 +148,14 @@ const AppReturn = ({
                 onClose={handleCloseUserMenu}
               >
                 {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                  <MenuItem key={setting.title} onClick={handleCloseUserMenu}>
                     <Link
-                      to={"/Error404"}
+                      to={setting.path}
                       style={{ textDecoration: "none", color: "black" }}
                     >
-                      <Typography textAlign="center">{setting}</Typography>
+                      <Typography textAlign="center">
+                        {setting.title}
+                      </Typography>
                     </Link>
                   </MenuItem>
                 ))}
