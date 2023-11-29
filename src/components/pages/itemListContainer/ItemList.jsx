@@ -2,6 +2,8 @@ import { Typography, Stack, Container } from "@mui/material";
 import ProductCard from "../../common/productCard/ProductCard";
 
 const ItemList = ({ items, categoryName }) => {
+  console.log("Productos:", items); // Agregar este console.log
+
   return (
     <>
       <Container maxWidth="xl" mt={1} mb={20} sx={{ overflowX: "scroll" }}>
@@ -16,9 +18,9 @@ const ItemList = ({ items, categoryName }) => {
           gap={2}
           mb={2}
         >
-          {items.map((item) => {
-            return <ProductCard item={item} key={item.id} />;
-          })}
+          {items.map((item) => (
+            <ProductCard item={item} key={item.title} />
+          ))}
         </Stack>
       </Container>
     </>

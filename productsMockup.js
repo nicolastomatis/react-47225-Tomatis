@@ -1,5 +1,6 @@
 export const productsMockup = [
   {
+    id: "603",
     title: "Revista 603",
     price: 149.99,
     stock: 100,
@@ -8,6 +9,7 @@ export const productsMockup = [
     img: "../src/assets/img/Nro603.jpg",
   },
   {
+    id: "604",
     title: "Revista 604",
     price: 149.99,
     stock: 100,
@@ -16,6 +18,7 @@ export const productsMockup = [
     img: "../src/assets/img/Nro604.jpg",
   },
   {
+    id: "605",
     title: "Revista 605",
     price: 149.99,
     stock: 100,
@@ -24,6 +27,7 @@ export const productsMockup = [
     img: "../src/assets/img/Nro605.jpg",
   },
   {
+    id: "606",
     title: "Revista 606",
     price: 149.99,
     stock: 100,
@@ -32,6 +36,7 @@ export const productsMockup = [
     img: "../src/assets/img/Nro606.jpg",
   },
   {
+    id: "607",
     title: "Revista 607",
     price: 149.99,
     stock: 100,
@@ -40,6 +45,7 @@ export const productsMockup = [
     img: "../src/assets/img/Nro607.jpg",
   },
   {
+    id: "608",
     title: "Revista 608",
     price: 149.99,
     stock: 100,
@@ -48,6 +54,7 @@ export const productsMockup = [
     img: "../src/assets/img/Nro608.jpg",
   },
   {
+    id: "609",
     title: "Revista 609",
     price: 149.99,
     stock: 100,
@@ -56,6 +63,7 @@ export const productsMockup = [
     img: "../src/assets/img/Nro609.jpg",
   },
   {
+    id: "610",
     title: "Revista 610",
     price: 149.99,
     stock: 100,
@@ -64,14 +72,7 @@ export const productsMockup = [
     img: "../src/assets/img/Nro610.jpg",
   },
   {
-    title: "Revista 610",
-    price: 149.99,
-    stock: 100,
-    description: "Revista Faba Informa N° 610",
-    category: "2023",
-    img: "../src/assets/img/Nro610.jpg",
-  },
-  {
+    id: "611",
     title: "Revista 611",
     price: 149.99,
     stock: 100,
