@@ -9,7 +9,7 @@ const FilterSectionContainer = () => {
     {
       id: "Todos",
       category: "Todos",
-      img: "../src/assets/img/Nro603.jpg",
+      img: "https://raw.githubusercontent.com/nicolastomatis/react-47225-Tomatis/main/src/assets/img/Nro603.jpg",
     },
   ]);
   useEffect(() => {
