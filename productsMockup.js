@@ -6,7 +6,7 @@ export const productsMockup = [
     stock: 100,
     description: "Revista Faba Informa N° 603",
     category: "2019",
-    img: "../src/assets/img/Nro603.jpg",
+    img: "http://fabainforma.org.ar/versionesanteriores/Nro603.jpg",
   },
   {
     id: "604",
@@ -15,7 +15,7 @@ export const productsMockup = [
     stock: 100,
     description: "Revista Faba Informa N° 604",
     category: "2019",
-    img: "../src/assets/img/Nro604.jpg",
+    img: "http://fabainforma.org.ar/versionesanteriores/Nro%20604.jpg",
   },
   {
     id: "605",
@@ -24,7 +24,7 @@ export const productsMockup = [
     stock: 100,
     description: "Revista Faba Informa N° 605",
     category: "2020",
-    img: "../src/assets/img/Nro605.jpg",
+    img: "http://fabainforma.org.ar/versionesanteriores/Nro605.jpg",
   },
   {
     id: "606",
@@ -33,7 +33,7 @@ export const productsMockup = [
     stock: 100,
     description: "Revista Faba Informa N° 606",
     category: "2020",
-    img: "../src/assets/img/Nro606.jpg",
+    img: "http://fabainforma.org.ar/versionesanteriores/Nro606.jpg",
   },
   {
     id: "607",
@@ -42,7 +42,7 @@ export const productsMockup = [
     stock: 100,
     description: "Revista Faba Informa N° 607",
     category: "2021",
-    img: "../src/assets/img/Nro607.jpg",
+    img: "http://fabainforma.org.ar/versionesanteriores/Nro607.jpg",
   },
   {
     id: "608",
@@ -51,7 +51,7 @@ export const productsMockup = [
     stock: 100,
     description: "Revista Faba Informa N° 608",
     category: "2021",
-    img: "../src/assets/img/Nro608.jpg",
+    img: "http://fabainforma.org.ar/versionesanteriores/Nro608.jpg",
   },
   {
     id: "609",
@@ -60,7 +60,7 @@ export const productsMockup = [
     stock: 100,
     description: "Revista Faba Informa N° 609",
     category: "2022",
-    img: "../src/assets/img/Nro609.jpg",
+    img: "http://fabainforma.org.ar/versionesanteriores/Nro609.jpg",
   },
   {
     id: "610",
@@ -69,7 +69,7 @@ export const productsMockup = [
     stock: 100,
     description: "Revista Faba Informa N° 610",
     category: "2022",
-    img: "../src/assets/img/Nro610.jpg",
+    img: "http://fabainforma.org.ar/versionesanteriores/Nro610.jpg",
   },
   {
     id: "611",
@@ -78,6 +78,6 @@ export const productsMockup = [
     stock: 100,
     description: "Revista Faba Informa N° 611",
     category: "2023",
-    img: "../src/assets/img/Nro611.jpg",
+    img: "http://fabainforma.org.ar/versionesanteriores/Nro611.jpg",
   },
 ];
