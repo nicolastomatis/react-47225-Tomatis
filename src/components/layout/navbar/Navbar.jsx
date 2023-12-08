@@ -50,7 +50,7 @@ function ResponsiveAppBar() {
           >
             <Link to="/">
               <img
-                src="http://fabainforma.org.ar/images/fabainforma%20logo.png"
+                src="https://github.com/nicolastomatis/react-47225-Tomatis/blob/main/src/assets/img/logo.png"
                 alt="Logo de FABA Informa"
                 style={{
                   maxWidth: '200px',
