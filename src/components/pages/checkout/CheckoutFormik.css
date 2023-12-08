@@ -1,0 +1,32 @@
+.checkout-form-container {
+  padding: 50px;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#TextField {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.buttons-container {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkh2 {
+  margin-bottom: 20px;
+  color: #000000;
+}

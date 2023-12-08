@@ -2,7 +2,7 @@ import { Typography, Stack, Container } from "@mui/material";
 import ProductCard from "../../common/productCard/ProductCard";
 
 const ItemList = ({ items, categoryName }) => {
-  console.log("Productos:", items); // Agregar este console.log
+  console.log("Productos:", items);
 
   return (
     <>

@@ -1,4 +1,4 @@
-export const productsMockup = [
+export let products = [
   {
     id: "603",
     title: "Revista 603",

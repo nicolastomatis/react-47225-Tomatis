@@ -1,33 +1,60 @@
+
 import { useContext, useEffect, useState } from "react";
-import ItemDetail from "./ItemDetail";
+import { ItemDetail } from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
-import { productsMockup } from "../../../../productsMockup.js";
+import { db } from "../../../firebaseConfig";
+import { getDoc, collection, doc } from "firebase/firestore";
+import Swal from "sweetalert2";
 
 const ItemDetailContainer = () => {
-  const [item, setItem] = useState({});
+  const [productSelected, setProductSelected] = useState({});
+  const [showCounter, setShowCounter] = useState(true);
+
   const { id } = useParams();
-  const { addToCart } = useContext(CartContext);
-  const [estado, setEstado] = useState({ estado: "inicial" });
+
+  const { addToCart, getQuantityById } = useContext(CartContext);
+
+  let totalQuantity = getQuantityById(id);
+
 
   useEffect(() => {
-    // Buscar el item en productsMockup por el id
-    const selectedItem = productsMockup.find((product) => product.id === id);
+    let itemCollection = collection(db, "products");
 
-    if (selectedItem) {
-      setItem(selectedItem);
-      setEstado({ estado: "existe" });
-    } else {
-      setEstado({ estado: "noExiste" });
-    }
+    let refDoc = doc(itemCollection, id);
+
+    getDoc(refDoc).then((res) => {
+      setProductSelected({ id: res.id, ...res.data() });
+    });
   }, [id]);
 
   const onAdd = (cantidad) => {
-    const addCart = { ...item, cantidad };
-    addToCart(addCart);
+    let item = {
+      ...productSelected,
+      quantity: cantidad,
+    };
+
+    addToCart(item);
+
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Producto agregado al carrito :)",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+
+    setShowCounter(false);
   };
 
-  return <ItemDetail item={item} onAdd={onAdd} estado={estado} />;
+  return (
+    <ItemDetail
+      showCounter={showCounter}
+      productSelected={productSelected}
+      onAdd={onAdd}
+      initial={totalQuantity}
+    />
+  );
 };
 
 export default ItemDetailContainer;
