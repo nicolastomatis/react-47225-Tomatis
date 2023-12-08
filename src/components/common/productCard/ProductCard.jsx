@@ -1,57 +1,53 @@
 import {
-  Typography,
-  Card,
-  CardMedia,
-  CardContent,
-  CardActions,
   Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ item }) => {
   return (
-    <>
-      <Card
-        sx={{
-          width: 345,
-          transition: "transform 0.25s ease-in-out",
-          "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
-        }}
-      >
-        <CardMedia
-          component="img"
-          alt="Revista Faba informa"
-          height="auto"
-          image={item.img}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {item.title}
-          </Typography>
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            sx={{
-              minHeight: "40.03px",
-              "&:hover": {
-                color: "red",
-                backgroundColor: "white",
-                cursor: "text",
-              },
-            }}
-          >
-            {item.description}
-          </Typography>
-        </CardContent>
-        <CardActions>
+    <Card
+      sx={{
+        margin: 2,
+        display: "flex",
+        flexDirection: " column",
+        backgroundColor: "#1202",
+      }}
+    >
+      <CardMedia
+        sx={{ height: 500 }}
+        image={item.img}
+        title={`image ${item.title}`}
+      />
+      <CardContent sx={{ maxWidth: 350 }}>
+        <Typography gutterBottom variant="h4" component="div">
+          {item.title}
+        </Typography>
+        <Typography variant="h6" color="text.secondary">
+          {item.description}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          $ {item.price} .-
+        </Typography>
+      </CardContent>
+      <CardActions>
+        {item.stock > 0 ? (
           <Link to={`/itemDetail/${item.id}`}>
             <Button size="small" variant="outlined">
-              Mas detalles
+              Ver detalle
             </Button>
           </Link>
-        </CardActions>
-      </Card>
-    </>
+        ) : (
+          <Button variant="contained" disabled>
+            Sin stock
+          </Button>
+        )}
+      </CardActions>
+    </Card>
   );
 };
 

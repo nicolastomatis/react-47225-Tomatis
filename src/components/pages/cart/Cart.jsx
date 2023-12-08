@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
 import Swal from "sweetalert2";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-import CounterContainer from "../../common/counter/CounterContainer";
-import CounterPresentacional from "../../common/counter/CounterPresentacional";
+import CounterContainer from "../../../components/common/counter/CounterContainer";
+import CounterPresentacional from "../../../components/common/counter/CounterPresentacional";
 
 const Cart = () => {
   const { cart, clearCart, deleteProductById, getTotalPrice } =
@@ -56,7 +56,7 @@ const Cart = () => {
             marginBottom: 10,
           }}
         >
-          <img src={product.img} alt="" style={{ width: 300, height: 130 }} />
+          <img src={product.img} alt="" style={{ width: 300, height: "100%" }} />
           <h2 style={{ paddingTop: 10, marginLeft: 20 }}>{product.title}</h2>
           <h3 style={{ marginLeft: 20 }}>U$D {product.price}</h3>
           <div style={{ display: "flex" }}>
@@ -73,7 +73,7 @@ const Cart = () => {
 
       {cart.length > 0 && (
         <div>
-          <h2 style={{ marginBottom: 6 }}>El total a pagar es : U$D {total}</h2>
+          <h2 style={{ marginBottom: 6 }}>El total a pagar es : $ {total}</h2>
           <Link to="/checkout">
             <Button variant="contained"  style={{ fontSize: 10 ,marginRight: 60, width: 110 }}>
               Finalizar compra

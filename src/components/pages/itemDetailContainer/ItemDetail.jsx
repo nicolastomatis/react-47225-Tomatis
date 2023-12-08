@@ -7,7 +7,7 @@ export const ItemDetail = ({ productSelected, onAdd, initial }) => {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      minHeight="60vh"
+      minHeight="100%"
     >
       {/* aca todo el detalle */}
       <Card
@@ -19,8 +19,7 @@ export const ItemDetail = ({ productSelected, onAdd, initial }) => {
       >
         <h2>{productSelected.title}</h2>
         <img src={productSelected.img} alt="" style={{ maxWidth: 500 }} />
-        <h3>U$D{productSelected.price}</h3>
-        <h5>Ya tienes {initial} en el carrito</h5>
+        <h3>$ {productSelected.price}</h3>
         {/* Aca el contador */}
         <CounterContainer
           stock={productSelected.stock}

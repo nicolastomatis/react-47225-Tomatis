@@ -19,7 +19,7 @@ const ItemList = ({ items, categoryName }) => {
           mb={2}
         >
           {items.map((item) => (
-            <ProductCard item={item} key={item.title} />
+            <ProductCard item={item} key={item} />
           ))}
         </Stack>
       </Container>

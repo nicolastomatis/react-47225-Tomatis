@@ -12,32 +12,33 @@ import ItemListSkeleton from "./ItemSkeleton";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
-
   const { categoryName } = useParams();
 
   useEffect(() => {
     let productsCollection = collection(db, "products");
-
     let consulta = undefined;
 
     if (!categoryName) {
-      
       consulta = productsCollection;
     } else {
-      
       consulta = query(
         productsCollection,
         where("category", "==", categoryName)
       );
     }
 
-    getDocs(consulta).then((res) => {
-      let newArray = res.docs.map((product) => {
-        return { ...product.data(), id: product.id };
-      });
+    getDocs(consulta)
+      .then((res) => {
+        let newArray = res.docs.map((product) => {
+          return { ...product.data(), id: product.id };
+        });
 
-      setItems(newArray);
-    });
+        console.log("Productos obtenidos:", newArray);
+        setItems(newArray);
+      })
+      .catch((error) => {
+        console.error("Error obteniendo productos:", error);
+      });
   }, [categoryName]);
 
   return (
